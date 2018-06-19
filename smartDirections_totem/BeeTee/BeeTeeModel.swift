@@ -25,7 +25,7 @@ class BeeTeeModel: BeeTeeDelegate {
         for subscriber in subscribers {
             subscriber.receivedBeeTeeNotification(notification: notification)
         }
-        print("BeeTeeNotification: " + String(describing: notification))
+        //print("BeeTeeNotification: " + String(describing: notification))
     }
     
     public func turnBluetoothOn() {

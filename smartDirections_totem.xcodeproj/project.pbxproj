@@ -15,13 +15,14 @@
 		B42E6168206BEB2D00768E90 /* BeeTee.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42E6161206BEB2D00768E90 /* BeeTee.swift */; };
 		B42E6169206BEB2D00768E90 /* BeeTeeDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42E6162206BEB2D00768E90 /* BeeTeeDevice.swift */; };
 		B43703FF206B8FFC0058093D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43703FE206B8FFC0058093D /* Data.swift */; };
-		B44134D5206BD0E2008A985E /* ViewControllerDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44134D4206BD0E2008A985E /* ViewControllerDevices.swift */; };
 		B473632320694B68001D7DAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B473632220694B68001D7DAE /* AppDelegate.swift */; };
 		B473632520694B68001D7DAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B473632420694B68001D7DAE /* ViewController.swift */; };
 		B473632820694B68001D7DAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B473632620694B68001D7DAE /* Main.storyboard */; };
 		B473632A20694B68001D7DAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B473632920694B68001D7DAE /* Assets.xcassets */; };
 		B473632D20694B68001D7DAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B473632B20694B68001D7DAE /* LaunchScreen.storyboard */; };
-		B473633520694BEB001D7DAE /* page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B473633420694BEB001D7DAE /* page2ViewController.swift */; };
+		B473633520694BEB001D7DAE /* BluetoothSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B473633420694BEB001D7DAE /* BluetoothSearcher.swift */; };
+		B4A5F4DA20D9142200E5CA14 /* ResumeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F4D920D9142200E5CA14 /* ResumeController.swift */; };
+		B4A5F4DC20D95BE200E5CA14 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F4DB20D95BE200E5CA14 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +39,6 @@
 		B42E6161206BEB2D00768E90 /* BeeTee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeTee.swift; sourceTree = "<group>"; };
 		B42E6162206BEB2D00768E90 /* BeeTeeDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeTeeDevice.swift; sourceTree = "<group>"; };
 		B43703FE206B8FFC0058093D /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		B44134D4206BD0E2008A985E /* ViewControllerDevices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDevices.swift; sourceTree = "<group>"; };
 		B473631F20694B68001D7DAE /* smartDirections_totem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartDirections_totem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B473632220694B68001D7DAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B473632420694B68001D7DAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +46,9 @@
 		B473632920694B68001D7DAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B473632C20694B68001D7DAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B473632E20694B68001D7DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B473633420694BEB001D7DAE /* page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = page2ViewController.swift; sourceTree = "<group>"; };
+		B473633420694BEB001D7DAE /* BluetoothSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothSearcher.swift; sourceTree = "<group>"; };
+		B4A5F4D920D9142200E5CA14 /* ResumeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeController.swift; sourceTree = "<group>"; };
+		B4A5F4DB20D95BE200E5CA14 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				B473632420694B68001D7DAE /* ViewController.swift */,
-				B473633420694BEB001D7DAE /* page2ViewController.swift */,
+				B4A5F4D920D9142200E5CA14 /* ResumeController.swift */,
+				B473633420694BEB001D7DAE /* BluetoothSearcher.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -123,9 +126,9 @@
 		B473632120694B68001D7DAE /* smartDirections_totem */ = {
 			isa = PBXGroup;
 			children = (
-				B44134D4206BD0E2008A985E /* ViewControllerDevices.swift */,
 				B473632220694B68001D7DAE /* AppDelegate.swift */,
 				B43703FE206B8FFC0058093D /* Data.swift */,
+				B4A5F4DB20D95BE200E5CA14 /* User.swift */,
 				B40ED9EA2074DACA00413674 /* Controller */,
 				B473632620694B68001D7DAE /* Main.storyboard */,
 				B473632920694B68001D7DAE /* Assets.xcassets */,
@@ -209,17 +212,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4A5F4DC20D95BE200E5CA14 /* User.swift in Sources */,
 				B42E6166206BEB2D00768E90 /* BluetoothManagerHandler.m in Sources */,
 				B42E6168206BEB2D00768E90 /* BeeTee.swift in Sources */,
-				B473633520694BEB001D7DAE /* page2ViewController.swift in Sources */,
+				B473633520694BEB001D7DAE /* BluetoothSearcher.swift in Sources */,
 				B473632520694B68001D7DAE /* ViewController.swift in Sources */,
-				B44134D5206BD0E2008A985E /* ViewControllerDevices.swift in Sources */,
 				B42E6164206BEB2D00768E90 /* DeviceListingViewController.swift in Sources */,
 				B473632320694B68001D7DAE /* AppDelegate.swift in Sources */,
 				B42E6167206BEB2D00768E90 /* DeviceDetailViewController.swift in Sources */,
 				B43703FF206B8FFC0058093D /* Data.swift in Sources */,
 				B42E6163206BEB2D00768E90 /* BluetoothDeviceHandler.m in Sources */,
 				B42E6165206BEB2D00768E90 /* BeeTeeModel.swift in Sources */,
+				B4A5F4DA20D9142200E5CA14 /* ResumeController.swift in Sources */,
 				B42E6169206BEB2D00768E90 /* BeeTeeDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

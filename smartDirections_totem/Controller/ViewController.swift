@@ -8,6 +8,9 @@
 
 import UIKit
 
+var sessionUsers = [User]()
+var userId = 0
+
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var label: UILabel!
@@ -37,18 +40,21 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     //display the selected row in the label
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        label.text = "vai da " + directions[row]
+        label.text = "Go to " + directions[row]
     }
     //**********
     
     
     //send data to the second view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let profName_secController = segue.destination as! page2ViewController
+        sessionUsers.append(User(name: nil, mac_address: nil, place: nil, id: nil))
+        sessionUsers[userId].id = userId
+        userId = userId + 1
+        let profName_secController = segue.destination as! BluetoothSearcher
         profName_secController.professor_name = label.text!
     }
     
-    
+    //**** DO NOT TOUCH
     private let beeTeeModel = BeeTeeModel.sharedInstance
     //default methods
     override func viewDidLoad() {
@@ -61,6 +67,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         // Dispose of any resources that can be recreated.
     }
     
+    //******
     
 
 

@@ -8,14 +8,21 @@
 
 import UIKit
 
-class page2ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BeeTeeDelegate{
+
+class BluetoothSearcher: UIViewController, UITableViewDelegate, UITableViewDataSource, BeeTeeDelegate{
+   
+    private var beeTeeModel = BeeTeeModel.sharedInstance
+
     
-    private let beeTeeModel = BeeTeeModel.sharedInstance
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var bluetoothPowerSwitch: UISwitch!
     @IBOutlet weak var bluetoothScanSwitch: UISwitch!
-    @IBOutlet weak var labelPage2: UILabel!
+    @IBOutlet weak var labelBTSearcher: UILabel!
     var professor_name = String()
+    var clients = [BtClient]()
+    var myBTdev = 0
+
+    
     
     func receivedBeeTeeNotification(notification: BeeTeeNotification) {
         myTableView.reloadData()
@@ -28,32 +35,52 @@ class page2ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        myTableView.delegate = self
+        myTableView.dataSource = self
         turnOnBt()
         startScanning()
-        self.labelPage2.text = professor_name
+        self.labelBTSearcher.text = professor_name
+        sessionUsers[userId-1].place = professor_name
         
         beeTeeModel.subscribe(subscriber: self)
         //bluetoothPowerSwitch.setOn(beeTeeModel.bluetoothIsOn(), animated: false)
         //bluetoothScanSwitch.setOn(beeTeeModel.isScanning(), animated: false)
     }
     
+    //return how many items are present in the bt list
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        clients.removeAll()
         return beeTeeModel.availableDevices.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("Popola table view")
-        print(indexPath.row)
-        //print("index path length")
-        //print(indexPath.count)
+    //return the bt devices found
+   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //clients.removeAll()
+    
         let beeTeeDevice = beeTeeModel.availableDevices[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "DeviceCellIdentifier")!
         cell.textLabel?.text = beeTeeDevice.name
         cell.detailTextLabel?.text = beeTeeDevice.address
+    
+        clients.append(BtClient(bt_name: beeTeeDevice.name, mac_address: beeTeeDevice.address))
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        beeTeeModel.stopScan()
+        myBTdev = indexPath.row
+        
+        
+        print("send to segue")
+        print(myBTdev)
+        print(clients[myBTdev])
+        performSegue(withIdentifier: "segueBT", sender: self)
+    }
+    
+    
+
+    //DO NOT TOUCH BELOW HERE
     func turnOnBt(){
         if !beeTeeModel.bluetoothIsOn() {
             beeTeeModel.turnBluetoothOn()
