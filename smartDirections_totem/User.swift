@@ -8,11 +8,12 @@
 
 import Foundation
 
-struct User{
+struct User : Codable{
     var name: String?
     var mac_address: String?
-    var place: String?
+    var place_id: Int?
     var id: Int?
+    var timestamp: String
 }
 
 struct BtClient{

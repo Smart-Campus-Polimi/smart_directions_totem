@@ -8,19 +8,17 @@
 
 import UIKit
 
-
 class BluetoothSearcher: UIViewController, UITableViewDelegate, UITableViewDataSource, BeeTeeDelegate{
    
     private var beeTeeModel = BeeTeeModel.sharedInstance
-
+    
     
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var bluetoothPowerSwitch: UISwitch!
     @IBOutlet weak var bluetoothScanSwitch: UISwitch!
     @IBOutlet weak var labelBTSearcher: UILabel!
-    var professor_name = String()
+    var professor_name = Int()
     var clients = [BtClient]()
-    var myBTdev = 0
 
     
     
@@ -39,8 +37,8 @@ class BluetoothSearcher: UIViewController, UITableViewDelegate, UITableViewDataS
         myTableView.dataSource = self
         turnOnBt()
         startScanning()
-        self.labelBTSearcher.text = professor_name
-        sessionUsers[userId-1].place = professor_name
+        self.labelBTSearcher.text = "Vai da " + directions[professor_name]
+        //sessionUsers[userId-1].place_id = professor_name
         
         beeTeeModel.subscribe(subscriber: self)
         //bluetoothPowerSwitch.setOn(beeTeeModel.bluetoothIsOn(), animated: false)
@@ -69,13 +67,14 @@ class BluetoothSearcher: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         beeTeeModel.stopScan()
-        myBTdev = indexPath.row
-        
+
+        sessionUsers[userId-1].mac_address = clients[indexPath.row].mac_address
+        sessionUsers[userId-1].name = clients[indexPath.row].bt_name
         
         print("send to segue")
-        print(myBTdev)
-        print(clients[myBTdev])
-        performSegue(withIdentifier: "segueBT", sender: self)
+        print(sessionUsers[userId-1])
+
+        performSegue(withIdentifier: "SegueBT", sender: self)
     }
     
     

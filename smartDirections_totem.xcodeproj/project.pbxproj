@@ -23,9 +23,14 @@
 		B473633520694BEB001D7DAE /* BluetoothSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B473633420694BEB001D7DAE /* BluetoothSearcher.swift */; };
 		B4A5F4DA20D9142200E5CA14 /* ResumeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F4D920D9142200E5CA14 /* ResumeController.swift */; };
 		B4A5F4DC20D95BE200E5CA14 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5F4DB20D95BE200E5CA14 /* User.swift */; };
+		B4A5F4FC20DA95AD00E5CA14 /* Helvetica.ttc in Resources */ = {isa = PBXBuildFile; fileRef = B4A5F4FB20DA95AD00E5CA14 /* Helvetica.ttc */; };
+		E1285EFFD0C0C1A3CE103273 /* Pods_smartDirections_totem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC062A904C87AFD096F73C3 /* Pods_smartDirections_totem.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43B37384FD1ACF72583AA9C2 /* Pods-smartDirections_totem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smartDirections_totem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-smartDirections_totem/Pods-smartDirections_totem.debug.xcconfig"; sourceTree = "<group>"; };
+		484820EBD48F5B7CA1D211E5 /* Pods-smartDirections_totem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smartDirections_totem.release.xcconfig"; path = "Pods/Target Support Files/Pods-smartDirections_totem/Pods-smartDirections_totem.release.xcconfig"; sourceTree = "<group>"; };
+		9CC062A904C87AFD096F73C3 /* Pods_smartDirections_totem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smartDirections_totem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42E6157206BEB2C00768E90 /* BluetoothDeviceHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BluetoothDeviceHandler.m; sourceTree = "<group>"; };
 		B42E6158206BEB2D00768E90 /* BluetoothDeviceHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BluetoothDeviceHandler.h; sourceTree = "<group>"; };
 		B42E6159206BEB2D00768E90 /* DeviceListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListingViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +54,7 @@
 		B473633420694BEB001D7DAE /* BluetoothSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothSearcher.swift; sourceTree = "<group>"; };
 		B4A5F4D920D9142200E5CA14 /* ResumeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeController.swift; sourceTree = "<group>"; };
 		B4A5F4DB20D95BE200E5CA14 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B4A5F4FB20DA95AD00E5CA14 /* Helvetica.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Helvetica.ttc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1285EFFD0C0C1A3CE103273 /* Pods_smartDirections_totem.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,8 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				B473632420694B68001D7DAE /* ViewController.swift */,
-				B4A5F4D920D9142200E5CA14 /* ResumeController.swift */,
 				B473633420694BEB001D7DAE /* BluetoothSearcher.swift */,
+				B4A5F4D920D9142200E5CA14 /* ResumeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -112,6 +119,9 @@
 			children = (
 				B473632120694B68001D7DAE /* smartDirections_totem */,
 				B473632020694B68001D7DAE /* Products */,
+				B4A5F4FD20DA95C100E5CA14 /* Font */,
+				E92D4E58B8BAC0E6E9641060 /* Pods */,
+				C35FFA835482834F7D4A0F8E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +149,31 @@
 			path = smartDirections_totem;
 			sourceTree = "<group>";
 		};
+		B4A5F4FD20DA95C100E5CA14 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				B4A5F4FB20DA95AD00E5CA14 /* Helvetica.ttc */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		C35FFA835482834F7D4A0F8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9CC062A904C87AFD096F73C3 /* Pods_smartDirections_totem.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E92D4E58B8BAC0E6E9641060 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43B37384FD1ACF72583AA9C2 /* Pods-smartDirections_totem.debug.xcconfig */,
+				484820EBD48F5B7CA1D211E5 /* Pods-smartDirections_totem.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,9 +181,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B473633120694B68001D7DAE /* Build configuration list for PBXNativeTarget "smartDirections_totem" */;
 			buildPhases = (
+				A85E6FAF09D1CB71D0F35B3D /* [CP] Check Pods Manifest.lock */,
 				B473631B20694B68001D7DAE /* Sources */,
 				B473631C20694B68001D7DAE /* Frameworks */,
 				B473631D20694B68001D7DAE /* Resources */,
+				2FEE5315BEDBA980BEF67137 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -202,10 +239,50 @@
 				B473632D20694B68001D7DAE /* LaunchScreen.storyboard in Resources */,
 				B473632A20694B68001D7DAE /* Assets.xcassets in Resources */,
 				B473632820694B68001D7DAE /* Main.storyboard in Resources */,
+				B4A5F4FC20DA95AD00E5CA14 /* Helvetica.ttc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FEE5315BEDBA980BEF67137 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-smartDirections_totem/Pods-smartDirections_totem-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Moscapsule/Moscapsule.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moscapsule.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-smartDirections_totem/Pods-smartDirections_totem-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A85E6FAF09D1CB71D0F35B3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-smartDirections_totem-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B473631B20694B68001D7DAE /* Sources */ = {
@@ -359,6 +436,7 @@
 		};
 		B473633220694B68001D7DAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43B37384FD1ACF72583AA9C2 /* Pods-smartDirections_totem.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -377,6 +455,7 @@
 		};
 		B473633320694B68001D7DAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 484820EBD48F5B7CA1D211E5 /* Pods-smartDirections_totem.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
