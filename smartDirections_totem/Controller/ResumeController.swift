@@ -9,11 +9,16 @@
 import UIKit
 import Moscapsule
 
+let arrowColors = ["verdi", "blu", "rosse", "bianche"]
+let arrowColMqtt = ["green", "blue", "red", "white"]
 let topicName = "topic/rasp4/directions"
-let broker = "10.172.0.11"
+let broker = "10.79.1.176"
+var arrowNumber = 0
+
 
 class ResumeController: UIViewController {
 
+    private let beeTeeModel = BeeTeeModel.sharedInstance
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var placeLabel: UILabel!
@@ -22,7 +27,8 @@ class ResumeController: UIViewController {
     @IBOutlet var addItemView: UIView!
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
 
-    let mqttClient = MQTT.newConnection(MQTTConfig(clientId: "client_cid", host: broker, port: 1883, keepAlive: 60))
+    @IBOutlet weak var okButton: UIButton!
+    let mqttClient = MQTT.newConnection(MQTTConfig(clientId: "client_cid", host: broker, port: 1883, keepAlive: 120))
     var effect:UIVisualEffect!
     
     
@@ -38,21 +44,38 @@ class ResumeController: UIViewController {
         
         addItemView.layer.cornerRadius = 5
         
-        placeLabel.text = "Indicazioni per " + String(sessionUsers[userId-1].place_id!)
+        
+        arrowNumber = getArrow()
+	        sessionUsers[userId-1].color = String(arrowColMqtt[(arrowNumber%4)])
+        
+        let index = directions_id.index(of: Int(sessionUsers[userId-1].place_id!))
+        placeLabel.text = "Indicazioni per " + String(directions[index!])
         nameLabel.text = "Ciao " + String(sessionUsers[userId-1].name!) + "!"
+        arrowLabel.text = "Segui le freccie " + String(arrowColors[(arrowNumber%4)])
+        arrowImgView.image = UIImage(named: String(arrowColors[(arrowNumber%4)]) + ".png")
         
-        
-        
+        print("arrow num")
+        print(arrowNumber)
         
     }
   
+    @IBAction func goBack(_ sender: Any) {
+        mqttClient.disconnect()
+    }
+    
+    fileprivate func getArrow() -> Int{
+        return UserDefaults.standard.integer(forKey: "colorNumber")
+    }
+    
+    
     @IBAction func confirmAction(_ sender: AnyObject) {
         sendMQTT()
         animateIn()
+        okButton.isHidden = true
     }
     
     @IBAction func dismissPopUp(_ sender: Any) {
-        sendMQTT()
+        //sendMQTT()
         animateOut()
     }
     
@@ -63,6 +86,9 @@ class ResumeController: UIViewController {
         
         addItemView.transform = CGAffineTransform.init(scaleX: 1.3, y:1.3)
         addItemView.alpha = 0
+        arrowNumber += 1
+        UserDefaults.standard.set(arrowNumber, forKey: "colorNumber")
+        UserDefaults.standard.synchronize()
         
         UIView.animate(withDuration: 0.4){
             self.visualEffectView.effect = self.effect
@@ -94,7 +120,7 @@ class ResumeController: UIViewController {
             let jsonString = String(data: jsonData, encoding: .utf8)!
 
             mqttClient.publish(string: jsonString, topic: topicName, qos: 2, retain: false)
-
+            print ("Send mqtt msg")
             
         } catch { print(error) }
         

@@ -14,6 +14,7 @@ struct User : Codable{
     var place_id: Int?
     var id: Int?
     var timestamp: String
+    var color: String?
 }
 
 struct BtClient{

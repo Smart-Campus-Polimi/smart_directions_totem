@@ -10,13 +10,17 @@ import UIKit
 
 var sessionUsers = [User]()
 var userId = 0
-let directions = ["Alessandro Redondi", "Matteo Cesana", "Antonio Capone", "Ilario Filippini"]
-let directions_id = [3403, 3695, 3449, 3657]
+var directions = [""]
+var directions_id = [0]
+let map_url = "http://10.79.1.176/map/map.xml"
+
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
+    
+    private var places: [Place]?
     
     var selected_place = 0
     
@@ -42,7 +46,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     //display the selected row in the label
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        label.text = "Go to " + directions[row]
+        label.text = "Vai da " + directions[row]
         selected_place = row
     }
     //**********
@@ -55,7 +59,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let dateString = formatter.string(from:now)
         
-        sessionUsers.append(User(name: nil, mac_address: nil, place_id: directions_id[selected_place], id: nil, timestamp: dateString))
+        sessionUsers.append(User(name: nil, mac_address: nil, place_id: directions_id[selected_place], id: nil, timestamp: dateString, color: nil))
         sessionUsers[userId].id = userId
         userId = userId + 1
         
@@ -68,9 +72,24 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     //default methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchData()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    private func fetchData()
+    {
+        directions = [""]
+        directions_id = [0]
+        let feedParser = DestinationParser()
+        feedParser.parseFeed(url: map_url){
+            (places) in self.places = places
+            for pl in places{
+                directions.append("\(pl.name)")
+                directions_id.append(Int(pl.placeId)!)
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

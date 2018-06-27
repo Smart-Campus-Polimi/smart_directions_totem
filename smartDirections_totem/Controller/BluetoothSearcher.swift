@@ -17,6 +17,7 @@ class BluetoothSearcher: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var bluetoothPowerSwitch: UISwitch!
     @IBOutlet weak var bluetoothScanSwitch: UISwitch!
     @IBOutlet weak var labelBTSearcher: UILabel!
+    
     var professor_name = Int()
     var clients = [BtClient]()
 
@@ -33,16 +34,14 @@ class BluetoothSearcher: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myTableView.delegate = self
-        myTableView.dataSource = self
         turnOnBt()
-        startScanning()
-        self.labelBTSearcher.text = "Vai da " + directions[professor_name]
-        //sessionUsers[userId-1].place_id = professor_name
+        beeTeeModel.startScanForDevices()
+        self.labelBTSearcher.text = "Direzioni per " + directions[professor_name] + ":"
         
         beeTeeModel.subscribe(subscriber: self)
         //bluetoothPowerSwitch.setOn(beeTeeModel.bluetoothIsOn(), animated: false)
         //bluetoothScanSwitch.setOn(beeTeeModel.isScanning(), animated: false)
+        print (beeTeeModel.availableDevices)
     }
     
     //return how many items are present in the bt list
@@ -53,7 +52,6 @@ class BluetoothSearcher: UIViewController, UITableViewDelegate, UITableViewDataS
     
     //return the bt devices found
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //clients.removeAll()
     
         let beeTeeDevice = beeTeeModel.availableDevices[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "DeviceCellIdentifier")!
@@ -71,9 +69,6 @@ class BluetoothSearcher: UIViewController, UITableViewDelegate, UITableViewDataS
         sessionUsers[userId-1].mac_address = clients[indexPath.row].mac_address
         sessionUsers[userId-1].name = clients[indexPath.row].bt_name
         
-        print("send to segue")
-        print(sessionUsers[userId-1])
-
         performSegue(withIdentifier: "SegueBT", sender: self)
     }
     
