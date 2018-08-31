@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B416D89A20DBA610007D4767 /* map.xml in Resources */ = {isa = PBXBuildFile; fileRef = B416D89920DBA610007D4767 /* map.xml */; };
 		B42E6163206BEB2D00768E90 /* BluetoothDeviceHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B42E6157206BEB2C00768E90 /* BluetoothDeviceHandler.m */; };
 		B42E6164206BEB2D00768E90 /* DeviceListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42E6159206BEB2D00768E90 /* DeviceListingViewController.swift */; };
 		B42E6165206BEB2D00768E90 /* BeeTeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42E615C206BEB2D00768E90 /* BeeTeeModel.swift */; };
@@ -14,7 +15,7 @@
 		B42E6167206BEB2D00768E90 /* DeviceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42E6160206BEB2D00768E90 /* DeviceDetailViewController.swift */; };
 		B42E6168206BEB2D00768E90 /* BeeTee.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42E6161206BEB2D00768E90 /* BeeTee.swift */; };
 		B42E6169206BEB2D00768E90 /* BeeTeeDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42E6162206BEB2D00768E90 /* BeeTeeDevice.swift */; };
-		B43703FF206B8FFC0058093D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43703FE206B8FFC0058093D /* Data.swift */; };
+		B43703FF206B8FFC0058093D /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43703FE206B8FFC0058093D /* XMLParser.swift */; };
 		B473632320694B68001D7DAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B473632220694B68001D7DAE /* AppDelegate.swift */; };
 		B473632520694B68001D7DAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B473632420694B68001D7DAE /* ViewController.swift */; };
 		B473632820694B68001D7DAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B473632620694B68001D7DAE /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		43B37384FD1ACF72583AA9C2 /* Pods-smartDirections_totem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smartDirections_totem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-smartDirections_totem/Pods-smartDirections_totem.debug.xcconfig"; sourceTree = "<group>"; };
 		484820EBD48F5B7CA1D211E5 /* Pods-smartDirections_totem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smartDirections_totem.release.xcconfig"; path = "Pods/Target Support Files/Pods-smartDirections_totem/Pods-smartDirections_totem.release.xcconfig"; sourceTree = "<group>"; };
 		9CC062A904C87AFD096F73C3 /* Pods_smartDirections_totem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smartDirections_totem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B416D89920DBA610007D4767 /* map.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = map.xml; sourceTree = "<group>"; };
 		B42E6157206BEB2C00768E90 /* BluetoothDeviceHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BluetoothDeviceHandler.m; sourceTree = "<group>"; };
 		B42E6158206BEB2D00768E90 /* BluetoothDeviceHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BluetoothDeviceHandler.h; sourceTree = "<group>"; };
 		B42E6159206BEB2D00768E90 /* DeviceListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListingViewController.swift; sourceTree = "<group>"; };
@@ -43,7 +45,7 @@
 		B42E6160206BEB2D00768E90 /* DeviceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailViewController.swift; sourceTree = "<group>"; };
 		B42E6161206BEB2D00768E90 /* BeeTee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeTee.swift; sourceTree = "<group>"; };
 		B42E6162206BEB2D00768E90 /* BeeTeeDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeeTeeDevice.swift; sourceTree = "<group>"; };
-		B43703FE206B8FFC0058093D /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		B43703FE206B8FFC0058093D /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		B473631F20694B68001D7DAE /* smartDirections_totem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartDirections_totem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B473632220694B68001D7DAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B473632420694B68001D7DAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,12 +139,13 @@
 			isa = PBXGroup;
 			children = (
 				B473632220694B68001D7DAE /* AppDelegate.swift */,
-				B43703FE206B8FFC0058093D /* Data.swift */,
+				B43703FE206B8FFC0058093D /* XMLParser.swift */,
 				B4A5F4DB20D95BE200E5CA14 /* User.swift */,
 				B40ED9EA2074DACA00413674 /* Controller */,
 				B473632620694B68001D7DAE /* Main.storyboard */,
 				B473632920694B68001D7DAE /* Assets.xcassets */,
 				B473632B20694B68001D7DAE /* LaunchScreen.storyboard */,
+				B416D89920DBA610007D4767 /* map.xml */,
 				B473632E20694B68001D7DAE /* Info.plist */,
 				B40ED9E62074D97F00413674 /* BeeTee */,
 			);
@@ -240,6 +243,7 @@
 				B473632A20694B68001D7DAE /* Assets.xcassets in Resources */,
 				B473632820694B68001D7DAE /* Main.storyboard in Resources */,
 				B4A5F4FC20DA95AD00E5CA14 /* Helvetica.ttc in Resources */,
+				B416D89A20DBA610007D4767 /* map.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +301,7 @@
 				B42E6164206BEB2D00768E90 /* DeviceListingViewController.swift in Sources */,
 				B473632320694B68001D7DAE /* AppDelegate.swift in Sources */,
 				B42E6167206BEB2D00768E90 /* DeviceDetailViewController.swift in Sources */,
-				B43703FF206B8FFC0058093D /* Data.swift in Sources */,
+				B43703FF206B8FFC0058093D /* XMLParser.swift in Sources */,
 				B42E6163206BEB2D00768E90 /* BluetoothDeviceHandler.m in Sources */,
 				B42E6165206BEB2D00768E90 /* BeeTeeModel.swift in Sources */,
 				B4A5F4DA20D9142200E5CA14 /* ResumeController.swift in Sources */,
@@ -439,6 +443,7 @@
 			baseConfigurationReference = 43B37384FD1ACF72583AA9C2 /* Pods-smartDirections_totem.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CCFNC9HP6H;
@@ -458,6 +463,7 @@
 			baseConfigurationReference = 484820EBD48F5B7CA1D211E5 /* Pods-smartDirections_totem.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CCFNC9HP6H;

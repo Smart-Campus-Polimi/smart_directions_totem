@@ -9,8 +9,8 @@
 import UIKit
 import Moscapsule
 
-let arrowColors = ["verdi", "blu", "rosse", "bianche"]
-let arrowColMqtt = ["green", "blue", "red", "white"]
+let arrowColors = ["gialle", "azzurre", "verdi", "bianche"]
+let arrowColMqtt = ["yellow", "cyan", "green", "white"]
 let topicName = "topic/rasp4/directions"
 let broker = "10.79.1.176"
 var arrowNumber = 0
@@ -75,7 +75,7 @@ class ResumeController: UIViewController {
     }
     
     @IBAction func dismissPopUp(_ sender: Any) {
-        //sendMQTT()
+        sendMQTT()
         animateOut()
     }
     
@@ -119,7 +119,7 @@ class ResumeController: UIViewController {
             let jsonData = try JSONEncoder().encode(sessionUsers[userId-1])
             let jsonString = String(data: jsonData, encoding: .utf8)!
 
-            mqttClient.publish(string: jsonString, topic: topicName, qos: 2, retain: false)
+            mqttClient.publish(string: jsonString, topic: topicName, qos: 1, retain: false)
             print ("Send mqtt msg")
             
         } catch { print(error) }
